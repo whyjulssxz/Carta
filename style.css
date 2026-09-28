@@ -1,0 +1,460 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Georgia", serif;
+    background: #fff5f7;
+    color: #5a303c;
+}
+
+/* ============================= */
+/* CORAZONES FLOTANTES */
+/* ============================= */
+
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+
+/* ============================= */
+/* INICIO */
+/* ============================= */
+
+.inicio {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #fff1f4,
+        #ffe1e9
+    );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ============================= */
+/* CARTA PRINCIPAL */
+/* ============================= */
+
+.carta {
+    max-width: 700px;
+    width: 100%;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    padding: 65px 45px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 40px rgba(120, 60, 80, 0.15);
+
+    backdrop-filter: blur(8px);
+
+    animation: aparecer 1.2s ease;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ============================= */
+/* CORAZÓN PRINCIPAL */
+/* ============================= */
+
+.corazon {
+    font-size: 60px;
+    color: #d95c78;
+
+    display: block;
+
+    animation: latido 1.5s infinite;
+}
+
+
+/* ============================= */
+/* TEXTO PEQUEÑO */
+/* ============================= */
+
+.pequeño {
+    margin-top: 15px;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    color: #96616e;
+}
+
+
+/* ============================= */
+/* TÍTULO */
+/* ============================= */
+
+h1 {
+    font-size: 48px;
+
+    line-height: 1.2;
+
+    margin: 20px 0;
+
+    color: #7c3046;
+}
+
+
+/* ============================= */
+/* MENSAJE */
+/* ============================= */
+
+.mensaje {
+    max-width: 550px;
+
+    margin: auto;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #704653;
+}
+
+
+/* ============================= */
+/* BOTONES */
+/* ============================= */
+
+button {
+    margin-top: 30px;
+
+    padding: 14px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #d95c78;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 5px 15px rgba(217, 92, 120, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    background: #c84967;
+
+    box-shadow:
+        0 8px 20px rgba(217, 92, 120, 0.4);
+}
+
+
+/* ============================= */
+/* SECCIÓN RECUERDOS */
+/* ============================= */
+
+.recuerdos {
+    min-height: 100vh;
+
+    padding: 100px 8%;
+
+    text-align: center;
+
+    background: #fffafc;
+
+    position: relative;
+}
+
+
+/* ============================= */
+/* SUBTÍTULO */
+/* ============================= */
+
+.subtitulo {
+    color: #d95c78;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    margin-bottom: 10px;
+}
+
+
+/* ============================= */
+/* TÍTULO RECUERDOS */
+/* ============================= */
+
+h2 {
+    font-size: 38px;
+
+    margin: 15px 0;
+
+    color: #7c3046;
+}
+
+
+/* ============================= */
+/* DESCRIPCIÓN */
+/* ============================= */
+
+.descripcion {
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+
+    line-height: 1.7;
+
+    color: #76515c;
+
+    font-size: 17px;
+}
+
+
+/* ============================= */
+/* GALERÍA */
+/* ============================= */
+
+.galeria {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* ============================= */
+/* TARJETAS DE FOTOS */
+/* ============================= */
+
+.foto {
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 25px rgba(100, 50, 70, 0.12);
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+
+/* Efecto cuando pasas el mouse */
+
+.foto:hover {
+    transform:
+        translateY(-8px)
+        rotate(1deg);
+
+    box-shadow:
+        0 15px 30px rgba(100, 50, 70, 0.18);
+}
+
+
+/* ============================= */
+/* IMÁGENES */
+/* ============================= */
+
+.foto img {
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+
+/* Zoom de la foto */
+
+.foto:hover img {
+    transform: scale(1.03);
+}
+
+
+/* ============================= */
+/* TEXTO DE LAS FOTOS */
+/* ============================= */
+
+.foto p {
+    padding: 15px 5px 8px;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    color: #704653;
+}
+
+
+/* ============================= */
+/* BOTÓN VOLVER */
+/* ============================= */
+
+.volver {
+    background: transparent;
+
+    color: #d95c78;
+
+    border: 1px solid #d95c78;
+
+    box-shadow: none;
+}
+
+.volver:hover {
+    background: #d95c78;
+
+    color: white;
+}
+
+
+/* ============================= */
+/* ANIMACIÓN DE APARECER */
+/* ============================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ============================= */
+/* ANIMACIÓN DEL CORAZÓN */
+/* ============================= */
+
+@keyframes latido {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ============================= */
+/* RESPONSIVE PARA CELULAR */
+/* ============================= */
+
+@media (max-width: 800px) {
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 29px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .carta {
+        padding: 45px 25px;
+    }
+
+    .mensaje {
+        font-size: 16px;
+    }
+
+    .recuerdos {
+        padding: 70px 20px;
+    }
+
+    .foto img {
+        height: 350px;
+    }
+}
+
+
+/* ============================= */
+/* CELULARES PEQUEÑOS */
+/* ============================= */
+
+@media (max-width: 450px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .corazon {
+        font-size: 48px;
+    }
+
+    .carta {
+        padding: 40px 20px;
+    }
+
+    .foto img {
+        height: 280px;
+    }
+}
